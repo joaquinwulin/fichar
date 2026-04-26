@@ -46,22 +46,23 @@ It detects your state automatically — same command either way.
 
 If you use Claude Code, you can run the script by just typing `/fichar` in the chat.
 
-Create the file `~/.claude/commands/fichar.md`:
+First, create the commands folder:
 
 ```bash
 mkdir -p ~/.claude/commands
-cat > ~/.claude/commands/fichar.md << 'EOF'
-Run the Holded time-tracking automation script by executing this bash command:
-
-```bash
-python3 /path/to/fichar/fichar.py
 ```
 
-Report the output to the user clearly. If there's an error, show the full message and suggest next steps.
-EOF
-```
+Then create the file `~/.claude/commands/fichar.md` with this content (replace `/path/to/fichar` with where you cloned the repo, e.g. `~/fichar`):
 
-Replace `/path/to/fichar` with the actual path where you cloned the repo (e.g. `~/fichar`). Then type `/fichar` in Claude Code to clock in or out.
+    Run the Holded time-tracking automation script by executing this bash command:
+
+    ```bash
+    python3 /path/to/fichar/fichar.py
+    ```
+
+    Report the output to the user clearly. If there's an error, show the full message and suggest next steps.
+
+Then type `/fichar` in Claude Code to clock in or out.
 
 ## Troubleshooting
 
