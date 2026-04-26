@@ -133,7 +133,17 @@ def main():
     open_holded_tab()
 
     print("Buscando botón de fichaje...")
-    result = run_js_in_chrome(FIND_CLICK_JS)
+    result = None
+    for attempt in range(10):
+        result = run_js_in_chrome(FIND_CLICK_JS)
+        if result.startswith('clicked:'):
+            break
+        if result.startswith('not_found'):
+            if attempt < 9:
+                print(f"  Intento {attempt + 1}/10, reintentando en 5s...")
+                time.sleep(5)
+        else:
+            break  # unexpected result, don't retry
 
     if result.startswith('clicked:'):
         action = result[len('clicked:'):]
