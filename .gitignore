@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 session.json
 debug_screenshot.png
+config.py

@@ -6,10 +6,7 @@ Only fires for Fridays between 2026-04-24 and 2026-06-26.
 import subprocess
 import sys
 import datetime
-
-START  = datetime.date(2026, 4, 24)
-END    = datetime.date(2026, 6, 26)
-SKIP   = {datetime.date(2026, 5, 15)}  # festivos
+from config import START, END, SKIP
 
 def yesterday_friday():
     today = datetime.date.today()
