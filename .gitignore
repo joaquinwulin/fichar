@@ -5,3 +5,6 @@ __pycache__/
 session.json
 debug_screenshot.png
 config.py
+config.example.py
+fichar_sabado.py
+fichar_cron.sh
